@@ -15,3 +15,5 @@ class Config:
 
     # Limiter
     RATELIMIT_DEFAULT = "200 per minute"
+    ENV = os.getenv("FLASK_ENV", "development")
+

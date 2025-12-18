@@ -14,7 +14,8 @@ def create_app():
     login_manager.init_app(app)
     csrf.init_app(app)
     limiter.init_app(app)
-    talisman.init_app(app)
+    if app.config["ENV"] == "production":
+        talisman.init_app(app)
 
     # Import models so migrations see them
     from . import models  # noqa: F401
