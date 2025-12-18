@@ -10,6 +10,7 @@
     </div>
 
     <form method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
       <div class="form-group">
         <label class="label">Email</label>
         <input name="email" type="email" class="input" required />

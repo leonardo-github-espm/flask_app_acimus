@@ -1,8 +1,9 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, app, redirect, url_for
 from flask_login import current_user
 from .config import Config
 from .extensions import db, migrate, login_manager, csrf, limiter, talisman
 from .blueprints import register_blueprints
+from flask_wtf.csrf import CSRFError
 
 def create_app():
     app = Flask(__name__)
@@ -28,5 +29,9 @@ def create_app():
         if current_user.is_authenticated:
             return redirect(url_for("agenda.today"))
         return redirect(url_for("auth.login"))
+
+    @app.errorhandler(CSRFError)
+    def handle_csrf_error(e):
+        return f"CSRF Error: {e.description}", 400
 
     return app

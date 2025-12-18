@@ -19,6 +19,9 @@ talisman = Talisman(
     content_security_policy=None
 )
 
+login_manager.login_view = "auth.login"
+login_manager.login_message = None
+
 @login_manager.user_loader
 def load_user(user_id):
     from .models.user import User
