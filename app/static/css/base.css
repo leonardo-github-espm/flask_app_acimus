@@ -1,0 +1,85 @@
+/* base.css */
+:root {
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  --fs-1: 12px;
+  --fs-2: 14px;
+  --fs-3: 16px;
+  --fs-4: 18px;
+  --fs-5: 20px;
+
+  --lh-1: 1.2;
+  --lh-2: 1.4;
+  --lh-3: 1.6;
+
+  /* Spacing (mobile-first) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+
+  /* Radius */
+  --r-1: 8px;
+  --r-2: 12px;
+  --r-3: 16px;
+
+  /* Layout */
+  --container-max: 1100px;
+  --container-pad: 16px;
+
+  /* Colors (neutros e seguros pra começar) */
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --primary: #2563eb;
+  --primary-contrast: #ffffff;
+
+  --danger: #dc2626;
+  --warning: #f59e0b;
+  --success: #16a34a;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-2: 0 6px 18px rgba(0,0,0,.10);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+}
+
+/* Reset simples */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-3);
+  line-height: var(--lh-3);
+  color: var(--text);
+  background: var(--bg);
+}
+
+img, svg, video { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}

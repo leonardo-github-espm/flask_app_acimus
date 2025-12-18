@@ -1,0 +1,30 @@
+/* responsive.css */
+
+/* sm */
+@media (min-width: 480px) {
+  :root {
+    --container-pad: 18px;
+  }
+}
+
+/* md (tablet) */
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 24px;
+  }
+}
+
+/* lg (desktop) */
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: 28px;
+    --container-max: 1180px;
+  }
+}
+
+/* xl (desktop largo) */
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1280px;
+  }
+}

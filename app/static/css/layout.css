@@ -1,0 +1,19 @@
+/* Exemplo em components.css */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-1);
+}
+
+@media (min-width: 1024px) {
+  .card { padding: var(--sp-5); }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
