@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
+from flask_login import current_user
 from .config import Config
 from .extensions import db, migrate, login_manager, csrf, limiter, talisman
 from .blueprints import register_blueprints
@@ -15,7 +16,16 @@ def create_app():
     limiter.init_app(app)
     talisman.init_app(app)
 
+    # Import models so migrations see them
+    from . import models  # noqa: F401
+
     # Blueprints
     register_blueprints(app)
+
+    @app.get("/")
+    def index():
+        if current_user.is_authenticated:
+            return redirect(url_for("agenda.today"))
+        return redirect(url_for("auth.login"))
 
     return app

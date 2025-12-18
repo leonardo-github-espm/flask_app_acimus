@@ -13,8 +13,10 @@ csrf = CSRFProtect()
 
 limiter = Limiter(key_func=get_remote_address)
 
+
 talisman = Talisman(
-    content_security_policy=None  # depois a gente endurece com CSP
+    force_https=False,
+    content_security_policy=None
 )
 
 @login_manager.user_loader

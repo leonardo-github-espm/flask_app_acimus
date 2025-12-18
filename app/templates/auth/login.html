@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-login">
+  <div class="login-box card">
+
+    <div class="card-header text-center">
+      <h1 class="card-title">Acimus</h1>
+      <p class="card-subtitle">Healthcare platform</p>
+    </div>
+
+    <form method="post">
+      <div class="form-group">
+        <label class="label">Email</label>
+        <input name="email" type="email" class="input" required />
+      </div>
+
+      <div class="form-group">
+        <label class="label">Password</label>
+        <input name="password" type="password" class="input" required />
+      </div>
+
+      <button class="btn btn-primary btn-block mt-4">
+        Sign in
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
